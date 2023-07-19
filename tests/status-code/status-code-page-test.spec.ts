@@ -14,7 +14,7 @@ test.beforeEach(async ({ page }) => {
   await homePage.selectStatusCodeLink();
 });
 
-test("Verify the Status Code Page", async ({ page }) => {
+test("Verify the Status Code Page heading and status code list", async ({ page }) => {
   statusCodePage = new StatusCodePage(page);
   const isHeaderVisible = await statusCodePage.isHeaderVisible();
   const statusCodes = await statusCodePage.getStatusCoseList();
@@ -22,10 +22,10 @@ test("Verify the Status Code Page", async ({ page }) => {
   expect(statusCodes).toEqual(TestValues.STATUS_CODES);
 });
 
-test("Verify the Succes status code", async ({ page }) => {
-    statusCodePage = new StatusCodePage(page);
-    const successPage = new SuccessCodePage(page)
-    await statusCodePage.selectStatusCode(StatusCodes.OK);
-    const description = await successPage.getDescription()
-    expect(description).toContain(TestValues.SUCCESS_CODE_PAGE_HEADER)
+test("Verify the Succes status code page", async ({ page }) => {
+  statusCodePage = new StatusCodePage(page);
+  const successPage = new SuccessCodePage(page);
+  await statusCodePage.selectStatusCode(StatusCodes.OK);
+  const description = await successPage.getDescription();
+  expect(description).toContain(TestValues.SUCCESS_CODE_PAGE_HEADER);
 });

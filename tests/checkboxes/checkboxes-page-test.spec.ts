@@ -10,21 +10,21 @@ test.beforeEach(async ({ page }) => {
   await homePage.selectCheckBoxesLink();
 });
 
-test("Verify the Checkboxes Page", async ({ page }) => {
+test("Verify the Checkboxes Page heading", async ({ page }) => {
   checkboxesPage = new CheckboxesPage(page);
 
   const isHeaderVisible = await checkboxesPage.isHeaderVisible();
   expect(isHeaderVisible).toBeTruthy();
 });
 
-test("Verify that checkbox 2 is checked. ", async ({ page }) => {
+test("Verify that checkbox 2 is checked by default", async ({ page }) => {
   checkboxesPage = new CheckboxesPage(page);
 
   const isChecked = await checkboxesPage.isChecked(2);
   expect(isChecked).toBeTruthy();
 });
 
-test("Verify that checkbox 1 can be checked.", async ({ page }) => {
+test("Verify that checkbox 1 can be checked", async ({ page }) => {
   checkboxesPage = new CheckboxesPage(page);
 
   await checkboxesPage.checkCheckBox(1);
@@ -32,9 +32,9 @@ test("Verify that checkbox 1 can be checked.", async ({ page }) => {
   expect(isChecked).toBeTruthy();
 });
 
-test("Verify that checkbox 2 can be unchecked.", async ({ page }) => {
+test("Verify that checkbox 2 can be unchecked", async ({ page }) => {
   checkboxesPage = new CheckboxesPage(page);
-  
+
   await checkboxesPage.uncheckCheckBox(2);
   const isChecked = await checkboxesPage.isChecked(2);
   expect(isChecked).toBeFalsy();

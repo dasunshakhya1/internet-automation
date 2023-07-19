@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   await homePage.selectAddRemoveElementLink();
 });
 
-test("Verify the Add Remove Element Page", async ({ page }) => {
+test("Verify the Add Remove Element Page header", async ({ page }) => {
   addRemoveElementPage = new AddRemoveElementPage(page);
 
   const isHeaderVisible = await addRemoveElementPage.isHeaderVisible();
@@ -25,7 +25,7 @@ test("Verify that adding three elements", async ({ page }) => {
   expect(elementCount).toEqual(3);
 });
 
-test("Verify that removing elements", async ({ page }) => {
+test("Verify that removing added elements", async ({ page }) => {
   addRemoveElementPage = new AddRemoveElementPage(page);
 
   await addRemoveElementPage.removeElements();

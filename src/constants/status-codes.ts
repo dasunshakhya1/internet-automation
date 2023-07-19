@@ -1,3 +1,3 @@
-export enum StatusCodes{
-    OK="200"
+export enum StatusCodes {
+  OK = "200",
 }

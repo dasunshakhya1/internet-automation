@@ -7,8 +7,8 @@ export class ElementList {
   private checkBoxesLnk: Locator;
   private addRemoveElemetLnk: Locator;
   private dropDownLnk: Locator;
-  private keyPressLnk: Locator
-  private statusCodeLnk: Locator
+  private keyPressLnk: Locator;
+  private statusCodeLnk: Locator;
 
   private elementList: Locator;
 
@@ -21,7 +21,7 @@ export class ElementList {
     this.addRemoveElemetLnk = page.getByRole(Roles.link, {
       name: "Add/Remove Elements",
     });
-    this.statusCodeLnk =page.getByRole(Roles.link,{name:"Status Codes"})
+    this.statusCodeLnk = page.getByRole(Roles.link, { name: "Status Codes" });
   }
 
   async getElements(): Promise<string[]> {
@@ -39,14 +39,14 @@ export class ElementList {
   }
 
   async selectDropDown() {
-    await this.dropDownLnk.click()
+    await this.dropDownLnk.click();
   }
 
   async selectKeyPress() {
-    await this.keyPressLnk.click()
+    await this.keyPressLnk.click();
   }
 
   async selectStausCodes() {
-    await this.statusCodeLnk.click()
+    await this.statusCodeLnk.click();
   }
 }

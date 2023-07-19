@@ -12,8 +12,8 @@ export class AbTestingPage {
   }
 
   async isHeaderVisible(): Promise<boolean> {
-    await this.header.waitFor()
+    await this.header.waitFor();
     const isVisible: boolean = await this.header.isVisible();
-    return isVisible
+    return isVisible;
   }
 }

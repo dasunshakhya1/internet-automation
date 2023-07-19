@@ -1,4 +1,4 @@
-export class TestValues{
+export class TestValues {
   static elements: string[] = [
     "A/B Testing",
     "Add/Remove Elements",
@@ -45,8 +45,4 @@ export class TestValues{
     "Typos",
     "WYSIWYG Editor",
   ];
-  
 }
-
-
- 

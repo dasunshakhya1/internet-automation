@@ -17,7 +17,7 @@ export class KeyPressPage {
   }
 
   async isHeaderVisible(): Promise<boolean> {
-    await this.header.waitFor()
+    await this.header.waitFor();
     const isVisible = await this.header.isVisible();
     return isVisible;
   }

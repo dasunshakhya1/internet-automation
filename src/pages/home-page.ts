@@ -32,19 +32,18 @@ export class HomePage {
   }
 
   async selectAddRemoveElementLink() {
-    await this.elementList.selectAddRemoveElement()
+    await this.elementList.selectAddRemoveElement();
   }
 
   async selectDropDownLink() {
-    await this.elementList.selectDropDown()
+    await this.elementList.selectDropDown();
   }
 
-
   async selectKeyPressLink() {
-    await this.elementList.selectKeyPress()
+    await this.elementList.selectKeyPress();
   }
 
   async selectStatusCodeLink() {
-    await this.elementList.selectStausCodes()
+    await this.elementList.selectStausCodes();
   }
 }

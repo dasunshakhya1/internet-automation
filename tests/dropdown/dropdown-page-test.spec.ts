@@ -13,14 +13,14 @@ test.beforeEach(async ({ page }) => {
   await homePage.selectDropDownLink();
 });
 
-test("Verify the Dropdown Page", async ({ page }) => {
+test("Verify the Dropdown Page heading", async ({ page }) => {
   dropDownPage = new DropDownPage(page);
 
   const isHeaderVisible = await dropDownPage.isHeaderVisible();
   expect(isHeaderVisible).toBeTruthy();
 });
 
-test("Verify that selecting option", async ({ page }) => {
+test("Verify that selecting Option 1", async ({ page }) => {
   dropDownPage = new DropDownPage(page);
 
   await dropDownPage.selectOption(OPTION_1);
@@ -28,7 +28,7 @@ test("Verify that selecting option", async ({ page }) => {
   expect(attributeValue).toEqual(SELECTED);
 });
 
-test("Verify that selecting different option", async ({ page }) => {
+test("Verify that selecting Option 2 and changing the status of Option 1", async ({ page }) => {
   dropDownPage = new DropDownPage(page);
 
   await dropDownPage.selectOption(OPTION_2);

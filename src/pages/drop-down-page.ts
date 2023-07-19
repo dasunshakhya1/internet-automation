@@ -13,20 +13,19 @@ export class DropDownPage {
   }
 
   async isHeaderVisible(): Promise<boolean> {
-    await this.header.waitFor()
+    await this.header.waitFor();
     const isVisible = await this.header.isVisible();
     return isVisible;
   }
 
   async selectOption(option: string) {
     await this.dropDown.selectOption(option);
-   
   }
-    
-    async isSelected(option: string): Promise<string | null> {
-        const attributeValue = await this.page
-        .getByRole("option", { name: option })
-        .getAttribute("selected");
-      return attributeValue;
-    }
+
+  async isSelected(option: string): Promise<string | null> {
+    const attributeValue = await this.page
+      .getByRole("option", { name: option })
+      .getAttribute("selected");
+    return attributeValue;
+  }
 }
