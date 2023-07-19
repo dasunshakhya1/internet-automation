@@ -3,23 +3,25 @@ import { ApplicationConfigs } from "../configs/application-config";
 import { ElementList } from "./components/element-list";
 
 export class HomePage {
-  readonly welcomeBanner: string = "Welcome to the-internet";
-
-  readonly page: Page;
-  readonly mainContext: Locator;
-  readonly welcomeBannerTxt: Locator;
+  private readonly page: Page;
+  private readonly header: Locator;
 
   private elementList: ElementList;
 
   constructor(page: Page) {
     this.page = page;
-    this.mainContext = page.getByTestId("heading");
-    this.welcomeBannerTxt = page.getByText(this.welcomeBanner);
+    this.header = page.getByText("Welcome to the-internet");
     this.elementList = new ElementList(page);
   }
 
   async navigateToApplication(): Promise<void> {
     await this.page.goto(ApplicationConfigs.BASE_URL);
+  }
+
+  async isHeaderVisible(): Promise<boolean> {
+    await this.header.waitFor();
+    const isVisible = await this.header.isVisible();
+    return isVisible;
   }
 
   async getEelements(): Promise<string[]> {

@@ -2,9 +2,9 @@ import { Locator, Page } from "@playwright/test";
 
 export class AddRemoveElementPage {
   private page: Page;
-  private header: Locator;
-  private addBtn: Locator;
-  private removeBtn: Locator;
+  private readonly header: Locator;
+  private readonly addBtn: Locator;
+  private readonly removeBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;

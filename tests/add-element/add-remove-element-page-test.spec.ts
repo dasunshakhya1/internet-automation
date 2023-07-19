@@ -14,6 +14,7 @@ test("Verify the Add Remove Element Page header", async ({ page }) => {
   addRemoveElementPage = new AddRemoveElementPage(page);
 
   const isHeaderVisible = await addRemoveElementPage.isHeaderVisible();
+
   expect(isHeaderVisible).toBeTruthy();
 });
 
@@ -22,6 +23,7 @@ test("Verify that adding three elements", async ({ page }) => {
 
   await addRemoveElementPage.addElements(3);
   const elementCount = await addRemoveElementPage.getAllAddedElementCount();
+
   expect(elementCount).toEqual(3);
 });
 
@@ -30,5 +32,6 @@ test("Verify that removing added elements", async ({ page }) => {
 
   await addRemoveElementPage.removeElements();
   const elementCount = await addRemoveElementPage.getAllAddedElementCount();
+
   expect(elementCount).toEqual(0);
 });

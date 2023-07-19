@@ -3,7 +3,7 @@ import { Page, Locator } from "@playwright/test";
 export class SuccessCodePage {
   private page: Page;
 
-  private description: Locator;
+  private readonly description: Locator;
 
   constructor(page: Page) {
     this.page = page;

@@ -3,9 +3,9 @@ import { Locator, Page } from "@playwright/test";
 export class CheckboxesPage {
   private page: Page;
 
-  private header: Locator;
-  private checkBox1: Locator;
-  private checkBox2: Locator;
+  private readonly header: Locator;
+  private readonly checkBox1: Locator;
+  private readonly checkBox2: Locator;
 
   constructor(page: Page) {
     this.page = page;

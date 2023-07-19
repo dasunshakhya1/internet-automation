@@ -2,8 +2,8 @@ import { Locator, Page } from "@playwright/test";
 
 export class AbTestingPage {
   private page: Page;
-  private description: Locator;
-  private header: Locator;
+  private readonly description: Locator;
+  private readonly header: Locator;
 
   constructor(page: Page) {
     this.page = page;

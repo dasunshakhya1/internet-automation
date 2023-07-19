@@ -6,7 +6,9 @@ test("Verify the Home page header", async ({ page }) => {
   const homePage = new HomePage(page);
 
   await homePage.navigateToApplication();
-  await expect(homePage.welcomeBannerTxt).toBeVisible();
+  const isHeaderVisible = await homePage.isHeaderVisible();
   const elementList = await homePage.getEelements();
+
+  expect(isHeaderVisible).toBeTruthy();
   expect(elementList).toEqual(TestValues.elements);
 });

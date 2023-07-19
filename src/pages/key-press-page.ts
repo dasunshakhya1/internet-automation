@@ -3,10 +3,10 @@ import { Locator, Page } from "@playwright/test";
 export class KeyPressPage {
   private page: Page;
 
-  private header: Locator;
-  private description: Locator;
-  private textInput: Locator;
-  private result: Locator;
+  private readonly header: Locator;
+  private readonly description: Locator;
+  private readonly textInput: Locator;
+  private readonly result: Locator;
 
   constructor(page: Page) {
     this.page = page;

@@ -4,13 +4,13 @@ import { Roles } from "../../constants/roles";
 export class ElementList {
   private page: Page;
 
-  private checkBoxesLnk: Locator;
-  private addRemoveElemetLnk: Locator;
-  private dropDownLnk: Locator;
-  private keyPressLnk: Locator;
-  private statusCodeLnk: Locator;
+  private readonly checkBoxesLnk: Locator;
+  private readonly addRemoveElemetLnk: Locator;
+  private readonly dropDownLnk: Locator;
+  private readonly keyPressLnk: Locator;
+  private readonly statusCodeLnk: Locator;
 
-  private elementList: Locator;
+  private readonly elementList: Locator;
 
   constructor(page: Page) {
     this.page = page;

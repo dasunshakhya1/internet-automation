@@ -3,8 +3,8 @@ import { Page, Locator } from "@playwright/test";
 export class StatusCodePage {
   private page: Page;
 
-  private header: Locator;
-  private statusCodeList: Locator;
+  private readonly header: Locator;
+  private readonly statusCodeList: Locator;
 
   constructor(page: Page) {
     this.page = page;

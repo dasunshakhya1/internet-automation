@@ -3,8 +3,8 @@ import { Locator, Page } from "@playwright/test";
 export class DropDownPage {
   private page: Page;
 
-  private header: Locator;
-  private dropDown: Locator;
+  private readonly header: Locator;
+  private readonly dropDown: Locator;
 
   constructor(page: Page) {
     this.page = page;
