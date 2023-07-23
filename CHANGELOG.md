@@ -14,6 +14,6 @@ Exciting initial release of Internet Automation!
 <li>Implement an automated test suite following the Page Object Model.</li>
 <li>Auto generated a test result report.</li>
 <li>Parallel execution in multiple browsers.</li>
-<li>Convinent runner script to integrate with the CI/CD pipeline</li>
+<li>Convenient runner script to integrate with the CI/CD pipeline</li>
 </ul>
 
