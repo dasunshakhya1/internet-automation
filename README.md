@@ -10,6 +10,6 @@ Automation framework to verify the functionality of [The Internet](https://the-i
 
 #### View Test Results
 1. `cd internet-automation`
-2. `npx playwright show-report
+2. `npx playwright show-report`
 3. Access reports at http://localhost:9323.
    
