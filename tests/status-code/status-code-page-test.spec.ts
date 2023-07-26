@@ -14,7 +14,7 @@ test.beforeEach(async ({ page }) => {
   await homePage.selectStatusCodeLink();
 });
 
-test("Verify the Status Code Page heading and status code list", async ({
+test("Verify that the Status code page header is visible and that the list contains the given status codes.", async ({
   page,
 }) => {
   statusCodePage = new StatusCodePage(page);
@@ -25,7 +25,7 @@ test("Verify the Status Code Page heading and status code list", async ({
   expect(statusCodes).toEqual(TestValues.STATUS_CODES);
 });
 
-test("Verify the Succes status code page", async ({ page }) => {
+test("Verify the Succes status code page description", async ({ page }) => {
   statusCodePage = new StatusCodePage(page);
   const successPage = new SuccessCodePage(page);
   await statusCodePage.selectStatusCode(StatusCodes.OK);

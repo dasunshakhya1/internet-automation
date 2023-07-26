@@ -10,36 +10,52 @@ test.beforeEach(async ({ page }) => {
   await homePage.selectCheckBoxesLink();
 });
 
-test("Verify the Checkboxes Page heading", async ({ page }) => {
+test("Verify that the header of the Checkboxes page is visible and that the initial checkbox count is the expected value.", async ({
+  page,
+}) => {
   checkboxesPage = new CheckboxesPage(page);
 
   const isHeaderVisible = await checkboxesPage.isHeaderVisible();
+  const initialChecBoxesCount = await checkboxesPage.getCheckBoxesCount();
 
+  expect(initialChecBoxesCount).toEqual(2);
   expect(isHeaderVisible).toBeTruthy();
 });
 
-test("Verify that checkbox 2 is checked by default", async ({ page }) => {
+test("Verify that checkbox 2 is checked and checkbox 1 is unchecked by default.", async ({
+  page,
+}) => {
   checkboxesPage = new CheckboxesPage(page);
 
-  const isChecked = await checkboxesPage.isChecked(2);
+  const isFirstCheckBoxChecked = await checkboxesPage.isChecked(1);
+  const isSecondCheckBoxChecked = await checkboxesPage.isChecked(2);
 
-  expect(isChecked).toBeTruthy();
+  expect(isFirstCheckBoxChecked).toBeFalsy();
+  expect(isSecondCheckBoxChecked).toBeTruthy();
 });
 
-test("Verify that checkbox 1 can be checked", async ({ page }) => {
+test("Verify that checkbox 1 can be checked without changing the status of checkbox 2.", async ({
+  page,
+}) => {
   checkboxesPage = new CheckboxesPage(page);
 
   await checkboxesPage.checkCheckBox(1);
-  const isChecked = await checkboxesPage.isChecked(1);
+  const isTheFirstBoxChecked = await checkboxesPage.isChecked(1);
+  const isTheSecondBoxChecked = await checkboxesPage.isChecked(2);
 
-  expect(isChecked).toBeTruthy();
+  expect(isTheFirstBoxChecked).toBeTruthy();
+  expect(isTheSecondBoxChecked).toBeTruthy();
 });
 
-test("Verify that checkbox 2 can be unchecked", async ({ page }) => {
+test("Verify that checkbox 2 can be unchecked without changing the status of checkbox 1.", async ({
+  page,
+}) => {
   checkboxesPage = new CheckboxesPage(page);
-
+  await checkboxesPage.checkCheckBox(1); // Pre-Condition - Changing the status of checkbox 1
   await checkboxesPage.uncheckCheckBox(2);
-  const isChecked = await checkboxesPage.isChecked(2);
+  const isSecondCheckBoxChecked = await checkboxesPage.isChecked(2);
+  const isTheFirstBoxChecked = await checkboxesPage.isChecked(1);
 
-  expect(isChecked).toBeFalsy();
+  expect(isSecondCheckBoxChecked).toBeFalsy();
+  expect(isTheFirstBoxChecked).toBeTruthy();
 });

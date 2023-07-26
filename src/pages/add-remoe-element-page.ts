@@ -15,8 +15,12 @@ export class AddRemoveElementPage {
 
   async isHeaderVisible(): Promise<boolean> {
     await this.header.waitFor();
-    const isVisible = await this.header.isVisible();
-    return isVisible;
+    return await this.header.isVisible();
+  }
+
+  async isAddRemoveFunctional(): Promise<boolean> {
+    await this.addBtn.waitFor();
+    return (await this.addBtn.isVisible()) && this.addBtn.isEnabled();
   }
 
   async addElements(count: number) {
@@ -30,10 +34,16 @@ export class AddRemoveElementPage {
     return buttons.length;
   }
 
-  async removeElements() {
+  async removeElements(count: number) {
     const buttons: Locator[] = await this.removeBtn.all();
-    for (let i = 0; i < buttons.length; i++) {
-      await buttons[i].click();
+
+    if (count <= buttons.length) {
+      for (let i = 0; i < count; i++) {
+        await buttons[i].click();
+      }
+    } else {
+        console.log(`The count (${count}) is greater than the actual number (${buttons.length}) of elements.`);
+        
     }
   }
 }
