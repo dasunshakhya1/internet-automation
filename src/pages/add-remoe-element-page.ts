@@ -42,8 +42,9 @@ export class AddRemoveElementPage {
         await buttons[i].click();
       }
     } else {
-        console.log(`The count (${count}) is greater than the actual number (${buttons.length}) of elements.`);
-        
+      console.log(
+        `The count (${count}) is greater than the actual number (${buttons.length}) of elements.`
+      );
     }
   }
 }

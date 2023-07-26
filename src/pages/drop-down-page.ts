@@ -20,14 +20,14 @@ export class DropDownPage {
     return isVisible;
   }
 
-  async isDropdownFuntional() : Promise<boolean> {
+  async isDropdownFuntional(): Promise<boolean> {
     await this.dropDown.waitFor();
     return (await this.dropDown.isVisible()) && this.dropDown.isEnabled();
   }
 
   async getOptions() {
-    const options = await this.options.all()
-    return await options.length
+    const options = await this.options.all();
+    return await options.length;
   }
 
   async selectOption(option: string) {

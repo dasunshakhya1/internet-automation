@@ -24,10 +24,10 @@ test("Verify that the result is changed when a Number key is pressed.", async ({
   page,
 }) => {
   keyPressPage = new KeyPressPage(page);
- 
+
   keyPressPage.enterTargetValues("s");
   const initialResult = await keyPressPage.getResultValue();
- 
+
   keyPressPage.enterTargetValues("1");
   const result = await keyPressPage.getResultValue();
 
@@ -35,7 +35,9 @@ test("Verify that the result is changed when a Number key is pressed.", async ({
   expect(result).not.toEqual(initialResult);
 });
 
-test("Verify that the result is changed when a Typing key is pressed.", async ({ page }) => {
+test("Verify that the result is changed when a Typing key is pressed.", async ({
+  page,
+}) => {
   keyPressPage = new KeyPressPage(page);
 
   keyPressPage.enterTargetValues("1");
@@ -48,7 +50,9 @@ test("Verify that the result is changed when a Typing key is pressed.", async ({
   expect(result).not.toEqual(initialResult);
 });
 
-test("Verify that the result is changed when a Control key is pressed.", async ({ page }) => {
+test("Verify that the result is changed when a Control key is pressed.", async ({
+  page,
+}) => {
   keyPressPage = new KeyPressPage(page);
 
   keyPressPage.enterTargetValues("s");

@@ -9,11 +9,12 @@ features and enhancements.
 Version 1.0 - Initial Release
 Exciting initial release of Internet Automation!
 <br>
+
 ### Key features:
+
 <ul>
 <li>Implement an automated test suite following the Page Object Model.</li>
 <li>Auto generated a test result report.</li>
 <li>Parallel execution in multiple browsers.</li>
 <li>Convenient runner script to integrate with the CI/CD pipeline</li>
 </ul>
-
